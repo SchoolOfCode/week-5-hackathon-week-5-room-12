@@ -1,0 +1,22 @@
+{
+  "name": "awardsdb",
+  "version": "1.0.0",
+  "description": "Feel free to delete this and start from scratch.",
+  "main": "app.js",
+  "type": "module",
+  "bin": {
+    "awardsdb": "bin/www.js"
+  },
+  "scripts": {
+    "start": "node --env-file .env bin/www.js",
+    "dev": "node --env-file .env --watch bin/www.js",
+    "reset-database": "node --env-file .env db/scripts/reset-database.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.13.1"
+  }
+}
