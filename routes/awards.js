@@ -1,6 +1,6 @@
 import express from "express";
 import {
-  // getAllAwards,
+  getAllAwards,
   // getAwardById,
   // createAward,
   // updateAwardById,
@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-// router.get("/", getAllAwards);
+router.get("/", getAllAwards);
 // router.get("/:award_id", getAwardById);
 // router.post("/", createAward);
 // router.patch("/:award_id", updateAwardById);
