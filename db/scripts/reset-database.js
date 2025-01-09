@@ -16,7 +16,7 @@ async function resetDatabase() {
           firstname VARCHAR(255) NOT NULL,
           surname VARCHAR(255) NOT NULL,
           profession VARCHAR(255) NOT NULL,
-          year_won YEAR NOT NULL    
+          year_won INT NOT NULL    
         );
       `);
 
