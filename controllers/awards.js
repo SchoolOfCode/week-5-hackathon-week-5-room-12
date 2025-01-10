@@ -2,6 +2,7 @@ import {
     fetchAllAwards,
     fetchAwardById,
     insertAward,
+    modifyAwardById,
 } from "../models/awards.js";
 
 export async function getAllAwards(req,res) {
@@ -49,3 +50,24 @@ export async function createAward(req, res) {
       res.status(500).json({ status: "error", message: error.message });
     }
   }
+
+  export async function updateAwardById(req,res) {
+    try {
+      const id = req.params.award_id;
+      const {award_name, winner_id} = req.body;
+      if (!award_name || !winner_id) {
+        return res
+        .status(400)
+        .json({ status: "fail", message: "Missing required fields" });
+        }
+      const award = await modifyAwardById(id, award_name, winner_id);
+      if (!award) {
+        return res
+        .status(404)
+        .json({ status: "fail", message: "Award not found" });
+        };
+      res.status(200).json({ status: "success", data: award });
+    } catch (error) {
+      res.status(500).json({ status: "error", message: error.message });
+    }
+  };
