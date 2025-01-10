@@ -4,7 +4,7 @@ import {
   getAwardById,
   createAward,
   updateAwardById,
-  // deleteAwardById,
+  deleteAwardById,
 } from "../controllers/awards.js";
 
 const router = express.Router();
@@ -13,6 +13,6 @@ router.get("/", getAllAwards);
 router.get("/:award_id", getAwardById);
 router.post("/", createAward);
 router.patch("/:award_id", updateAwardById);
-// router.delete("/:award_id", deleteAwardById);
+router.delete("/:award_id", deleteAwardById);
 
 export default router;
